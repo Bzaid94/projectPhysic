@@ -1,6 +1,6 @@
 package com.umg.edu.manager.longitud;
 
-public class ConversionManager {
+public class LongitudManager {
     public static Double convertAMetros(double longitud, String origen) throws IllegalAccessException {
         switch(origen.toLowerCase()){
             case "metros" -> {
