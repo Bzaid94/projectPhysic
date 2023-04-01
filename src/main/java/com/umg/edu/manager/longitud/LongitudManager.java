@@ -1,6 +1,6 @@
 package com.umg.edu.manager.longitud;
 
-public class ConversionManager {
+public class LongitudManager {
     public static Double convertAMetros(double longitud, String origen) throws IllegalAccessException {
         switch(origen.toLowerCase()){
             case "metros" -> {
@@ -18,7 +18,10 @@ public class ConversionManager {
             case "pulgadas" -> {
                 return longitud * 0.0254;
             }
-            default -> throw new IllegalAccessException("No se reconoce la unidad de medida"
+            case "centimetros" -> {
+                return longitud / 100;
+            }
+            default -> throw new IllegalAccessException("No se reconoce la unidad de medida "
             + origen);
         }
     }
@@ -40,7 +43,10 @@ public class ConversionManager {
             case "pulgadas" -> {
                 return longitudMetros / 0.0254;
             }
-            default -> throw new IllegalAccessException("No se reconoce la unidad de medida"
+            case "centimetros" -> {
+                return longitudMetros * 100;
+            }
+            default -> throw new IllegalAccessException("No se reconoce la unidad de medida "
             + destino);
         }
     }
