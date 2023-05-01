@@ -1,5 +1,8 @@
 package com.umg.edu.manager.masa;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class MasaManager {
     public static Double convertirAGramos(double masa, String origen){
         switch(origen.toLowerCase()){

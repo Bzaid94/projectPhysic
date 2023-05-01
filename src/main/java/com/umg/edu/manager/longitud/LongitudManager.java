@@ -1,5 +1,8 @@
 package com.umg.edu.manager.longitud;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class LongitudManager {
     public static Double convertAMetros(double longitud, String origen) throws IllegalAccessException {
         switch(origen.toLowerCase()){

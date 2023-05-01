@@ -1,5 +1,8 @@
 package com.umg.edu.manager.tiempo;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class TiempoManager {
     public static Double convertirASegundos(double tiempo, String origen){
         switch(origen.toLowerCase()){
