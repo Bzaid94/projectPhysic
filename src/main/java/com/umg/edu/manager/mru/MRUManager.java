@@ -1,5 +1,8 @@
 package com.umg.edu.manager.mru;
 
+import org.springframework.stereotype.Service;
+
+@Service
 public class MRUManager {
     public double calcularVelocidad(double distancia, double tiempo) {
         return distancia / tiempo;

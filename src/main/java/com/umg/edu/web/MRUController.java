@@ -9,12 +9,6 @@ import org.springframework.web.bind.annotation.*;
 public class MRUController {
     MRUManager manager = new MRUManager();
 
-    @GetMapping("/calcularDistancia")
-    public Double calcularDistancia(@RequestParam Double velocidad,
-                                         @RequestParam Double tiempo) throws IllegalAccessException {
-        return manager.calcularDistancia(velocidad, tiempo);
-    }
-
     @GetMapping("/calcularMRU")
     public Double calcularMRU(@RequestParam (required = false) Double distancia,
                               @RequestParam (required = false) Double velocidad,
