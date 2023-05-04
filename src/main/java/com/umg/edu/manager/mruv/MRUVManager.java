@@ -58,10 +58,15 @@ public class MRUVManager {
             logger.info("Velocidad Final: " + calcularVelocidadFinal(velocidadInicial, aceleracion, tiempo));
         }
 
-        //condicion para calcular la velocidad media si antes ya se calculo la velocidad final
-        if(velocidadFinal == 0) {
+        if(velocidadFinal > 0) {
             resultados.put("Velocidad Media", calcularVelocidadMedia(velocidadInicial, velocidadFinal));
             logger.info("Velocidad Media: " + calcularVelocidadMedia(velocidadInicial, velocidadFinal));
+        }
+
+        if(velocidadFinal > 0) {
+            double velocidadMedia = calcularVelocidadMedia(velocidadInicial, velocidadFinal);
+            resultados.put("Velocidad Media", velocidadMedia);
+            logger.info("Velocidad Media: " + velocidadMedia);
         }
 
         if(aceleracion == 0){
