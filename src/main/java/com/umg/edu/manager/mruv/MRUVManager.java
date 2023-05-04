@@ -4,12 +4,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.logging.Logger;
 
 @Service
 public class MRUVManager {
-    Logger logger = Logger.getLogger(MRUVManager.class.getName());
-
     public double calcularAceleracion(double velocidadInicial, double velocidadFinal, double tiempo){
         return (velocidadFinal - velocidadInicial) / tiempo;
     }
