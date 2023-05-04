@@ -55,6 +55,10 @@ public class MRUVManager {
             resultados.put("Velocidad Media", calcularVelocidadMedia(velocidadInicial, newVelocidadFinal));
         }
 
+        if(velocidadFinal > 0){
+            resultados.put("Velocidad Media", calcularVelocidadMedia(velocidadInicial, velocidadFinal));
+        }
+
         if(aceleracion == 0){
             double vf = velocidadFinal == 0 ? (2 * distancia - velocidadInicial * tiempo) / tiempo : velocidadFinal;
             resultados.put("Aceleración", calcularAceleracion(velocidadInicial, vf, tiempo));
