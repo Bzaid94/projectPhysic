@@ -49,36 +49,23 @@ public class MRUVManager {
             resultados.put("Distancia", calcularDistancia(velocidadInicial, velocidadFinal, tiempo));
         }
 
-        /*if(velocidadInicial == 0){
-            resultados.put("Velocidad Inicial", calcularVelocidadFinal(velocidadFinal, aceleracion, tiempo) - (aceleracion * tiempo));
-        }*/
-
         if(velocidadFinal == 0){
             resultados.put("Velocidad Final", calcularVelocidadFinal(velocidadInicial, aceleracion, tiempo));
-            logger.info("Velocidad Final: " + calcularVelocidadFinal(velocidadInicial, aceleracion, tiempo));
         }
 
-        if(velocidadFinal > 0) {
-            resultados.put("Velocidad Media", calcularVelocidadMedia(velocidadInicial, velocidadFinal));
-            logger.info("Velocidad Media: " + calcularVelocidadMedia(velocidadInicial, velocidadFinal));
-        }
-
-        if(velocidadFinal > 0) {
-            double velocidadMedia = calcularVelocidadMedia(velocidadInicial, velocidadFinal);
-            resultados.put("Velocidad Media", velocidadMedia);
-            logger.info("Velocidad Media: " + velocidadMedia);
+        if(velocidadFinal == 0) {
+            Double newVelocidadFinal = resultados.get("Velocidad Final");
+            resultados.put("Velocidad Media", calcularVelocidadMedia(velocidadInicial, newVelocidadFinal));
         }
 
         if(aceleracion == 0){
             double vf = velocidadFinal == 0 ? (2 * distancia - velocidadInicial * tiempo) / tiempo : velocidadFinal;
             resultados.put("Aceleración", calcularAceleracion(velocidadInicial, vf, tiempo));
-            logger.info("Aceleración: " + calcularAceleracion(velocidadInicial, vf, tiempo));
         }
 
         if(tiempo == 0){
             double vf = velocidadFinal == 0 ? (2 * distancia) / velocidadInicial : velocidadFinal;
             resultados.put("Tiempo", (vf - velocidadInicial) / aceleracion);
-            logger.info("Tiempo: " + (vf - velocidadInicial) / aceleracion);
         }
 
         return resultados;
